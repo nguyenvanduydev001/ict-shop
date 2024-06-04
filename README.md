@@ -17,7 +17,7 @@
 6. Sau đó Lưu lại `build` lại ứng dụng . 
 7. Chạy lên và thưởng thức thôi 😁
 
-#### Nếu làm theo những bước trên bạn có thể tham khảm 2 bước đưới đây :
+#### Nếu làm theo những bước trên mà bạn không làm được thì bạn  có thể tham khảm 2 bước đưới đây :
 
 [Liên kết youtube](https://youtu.be/PppZUa1h4hQ?si=ZUkyH8XEKkrvgEEP) hoặc [Liên kết chatgpt](https://chatgpt.com/)
 

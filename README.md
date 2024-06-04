@@ -36,5 +36,5 @@ Có thể chỉnh sửa giỏ hàng
 - Chức năng đặt hàng 
 – Kích vào hình ảnh để xem chi tiết sản phẩm
 – Đăng nhập tài khoản admin để thêm sửa xóa sản phẩm và các danh mục khác.
->                     Chúc bạn thành công 👍😀
+>                                                                   Chúc bạn thành công 👍😀
 

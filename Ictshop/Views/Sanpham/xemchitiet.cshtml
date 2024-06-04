@@ -1,0 +1,84 @@
+﻿@using Ictshop.Models
+@model Sanpham
+
+@{
+    ViewBag.Title = "Xem chi tiết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* CSS cho trang chi tiết sản phẩm */
+    .product-details {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .product-image img {
+        width: 500px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+        flex: 1;
+        padding: 0 20px;
+        max-width: 500px;
+    }
+
+    .product-name {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .product-price {
+        font-size: 18px;
+        color: red;
+        margin-bottom: 20px;
+    }
+
+    .product-description {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .buy-button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .buy-button:hover {
+            background-color: #218838;
+        }
+</style>
+
+<br />
+
+<div class="product-details">
+    <div class="product-image">
+        <img src="@Url.Content("~" + @Model.Anhbia)" alt="@Model.Tensp" />
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">@Model.Tensp</h3>
+        <br />
+        <div class="product-description">
+            @Html.Raw(@Model.Mota)
+        </div>
+        <h3 class="product-price">Giá: @String.Format("{0:0,0}", @Model.Giatien) VND</h3>
+        <br />
+        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMasp = Model.Masp, @strURL = Request.Url.ToString() }))
+        {
+            <input type="submit" value="Mua hàng" id="bgnGioHang" class="buy-button" />
+        }
+    </div>
+</div>

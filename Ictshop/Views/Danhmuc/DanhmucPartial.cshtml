@@ -1,0 +1,65 @@
+﻿@using Ictshop.Models;
+@model List<Hangsanxuat>
+
+<br />
+
+<div class="bg-custom">
+    <div class="custom-row">
+        <h3 class="custom-heading"> ĐIỆN THOẠI NỔI BẬT NHẤT </h3>
+
+        @foreach (var item in Model)
+        {
+            <div class="custom-item">
+                <button class="custom-button"><a href="#"> @item.Tenhang</a></button>
+            </div>
+        }
+    </div>
+</div>
+<style>
+    .bg-custom {
+        background-color: white;
+    }
+
+    .custom-button {
+        background-color: #f3f4f6;
+        border: none;
+        color: black;
+        padding: 7px 11px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 54px;
+        cursor: pointer;
+        border: 1px solid #e5e7eb;
+    }
+
+        .custom-button a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .custom-button a:hover {
+            color: red;
+            font-weight: 700;
+        }
+
+    .custom-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: -18px;
+        margin-bottom: -8px;
+    }
+
+    .custom-item {
+        margin: 10px 0;
+        margin-left: 5px;
+    }
+
+    .custom-heading {
+        margin: 16px 0;
+        font-weight: 700;
+    }
+
+</style>

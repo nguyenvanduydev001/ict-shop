@@ -1,0 +1,152 @@
+﻿@model Ictshop.Models.Sanpham
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center text-primary">Chi tiết sản phẩm</h2>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h4>Thông tin sản phẩm</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Hangsanxuat.Tenhang)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Hangsanxuat.Tenhang)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Hedieuhanh.Tenhdh)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Hedieuhanh.Tenhdh)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Tensp)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Tensp)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Giatien)</dt>
+                <dd class="col-9">@String.Format("{0:0,0}", Model.Giatien) VNĐ</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Soluong)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Soluong)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Mota)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Mota)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Thesim)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Thesim)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Bonhotrong)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Bonhotrong)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Sanphammoi)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Sanphammoi)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Ram)</dt>
+                <dd class="col-9">@Html.DisplayFor(model => model.Ram)</dd>
+
+                <dt class="col-3">@Html.DisplayNameFor(model => model.Anhbia)</dt>
+                <dd class="col-9">
+                    <img src="@Url.Content(Model.Anhbia)" alt="Ảnh bìa sản phẩm" class="product-image" />
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <a href="@Url.Action("Edit", new { id = Model.Masp })" class="btn btn-warning">Sửa</a>
+            <a href="@Url.Action("Index")" class="btn btn-secondary">Trở về danh sách</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Chỉnh sửa tiêu đề */
+    h2.text-center.text-primary {
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    /* Chỉnh sửa thẻ container */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    /* Chỉnh sửa thẻ card */
+    .card {
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border-bottom: 1px solid #dee2e6;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-footer {
+        background-color: #f8f9fa;
+        padding: 10px 15px;
+        border-top: 1px solid #dee2e6;
+        border-radius: 0 0 4px 4px;
+        text-align: right;
+    }
+
+    /* Chỉnh sửa dl, dt, dd */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .col-3 {
+        width: 25%;
+        font-weight: bold;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    /* Chỉnh sửa ảnh sản phẩm */
+    .product-image {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        padding: 5px;
+    }
+
+    /* Chỉnh sửa nút */
+    .btn {
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-left: 5px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+</style>

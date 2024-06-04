@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Ictshop.Models.Chitietdonhang>
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="custom-title">Chi tiết đơn hàng</h2>
+
+<table class="custom-table">
+    <tr>
+        <th>
+            Sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá / 1 sản phẩm
+        </th>
+        <th>
+            Thành tiền
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sanpham.Tensp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluong)
+            </td>
+            <td>
+                @String.Format("{0:0,0}", item.Dongia) VNĐ
+            </td>
+            <td>
+                @String.Format("{0:0,0}", item.Thanhtien) VNĐ
+            </td>
+        </tr>
+    }
+
+</table>
+
+<style>
+    /* General layout */
+    .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 19.47%;
+    }
+
+        .custom-table th, .custom-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f2f2f2;
+        }
+
+    .title {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Form elements */
+    .form-control {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px 12px;
+    }
+
+        .form-control:focus {
+            border-color: #8cbfdd;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.1);
+        }
+
+    select.form-control {
+        appearance: none;
+        background-image: url("data:image/svg+xml;base64,phN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjkiIGZpZWxsbG9uZGg9IjEwIiB2aWV3Qm94PSIwIDAgNiA5Ij48cGF0aCBkPSJNMS4zMzMgNy42NjcgMi42NiA2LjMwMyA0LjkyNyA4LjY2NyA2LjMzMyA2LjMwMyA3LjY2NyA0LjkzMyA5IDMuMjMzTDkgMS4zMzMgNi4zMzMgMi42NjcgPC8+PC9zdmcvPg==");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        padding-right: 30px;
+    }
+
+    /* Text elements */
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    h3.text-danger {
+        font-size: 18px;
+    }
+
+    /* Button */
+    .btn.btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+        .btn.btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    .custom-title {
+        text-align: center;
+        color: #5bc0de;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+</style>

@@ -1,0 +1,115 @@
+﻿@using Ictshop.Models;
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "Giỏ hàng - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="custom-title"> GIỎ HÀNG <i class="fa fa-shopping-cart"></i></h2>
+<br />
+<table class="table-hover table-bordered divGioHang">
+    <thead>
+        <tr>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Ảnh bìa</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="font-italic">
+                <td>@item.iMasp</td>
+                <td>@item.sTensp</td>
+                <td><img src="@Url.Content("~" + item.sAnhBia)" width="50" height="50" /></td>
+                <td>@String.Format("{0:0,0}", item.dDonGia) VNĐ</td>
+                <td>@item.iSoLuong</td>
+                <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" style="text-align:right">
+                @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang", null, new { @class = "btn btn-warning" })
+            </td>
+            <td style="padding-top: 20px;">
+                @using (Html.BeginForm("ThanhToanDonHang", "GioHang", new { @class = "" }))
+                {
+                    <input type="submit" value="Đặt hàng" class="btn btn-danger" />
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+@* CSS for Shopping Cart *@
+<style type="text/css">
+    .divGioHang {
+        border: 2px solid #dddddd;
+        margin: 0 auto;
+        padding: 20px;
+        font-size: large;
+        width: 80%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        margin: 30px auto;
+    }
+
+        .divGioHang th, .divGioHang td {
+            padding: 15px;
+            border: 1px solid #dddddd;
+            text-align: center;
+        }
+
+        .divGioHang th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .divGioHang tr:hover {
+            background-color: #e9ecef;
+        }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+        border: none;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            color: white;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            color: white;
+        }
+    .custom-title {
+        text-align: center;
+        color: #5bc0de;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+</style>

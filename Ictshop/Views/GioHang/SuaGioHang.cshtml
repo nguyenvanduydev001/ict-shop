@@ -1,0 +1,130 @@
+﻿@using Ictshop.Models;
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "Sửa giỏ hàng - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center><h2 class="custom-title"> GIỎ HÀNG</h2></center>
+
+<table class="table-bordered font-italic divGioHang">
+    <thead>
+        <tr>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Ảnh bìa</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.iMasp</td>
+                <td>@item.sTensp</td>
+                <td><img src="@Url.Content("~" + item.sAnhBia)" width="50" height="50" /></td>
+                <td>@String.Format("{0:0,0}", item.dDonGia) VNĐ</td>
+
+                @*Chỉnh sửa giỏ hàng gọi về action CapNhatGioHang*@
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMaSP = item.iMasp }))
+                {
+                    <td>@Html.TextBox("txtSoLuong", item.iSoLuong, new { @class = "form-control" })</td>
+                    <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+                    <td>
+                        <input type="submit" value="Cập nhật" class="btn btn-secondary btn-sm" />
+                        <br />
+                        @*Xóa giỏ hàng gọi về Action XoaGioHang*@
+                        <button class="btn btn-danger btn-sm mt-2 custum-remove">@Html.ActionLink("Xóa", "XoaGioHang", new { @iMaSP = item.iMasp })</button>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*CSS giỏ hàng*@
+<style type="text/css">
+    .divGioHang {
+        border: 2px solid #EEEEEE;
+        margin: 20px auto;
+        padding: 20px;
+        font-size: large;
+        width: 90%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .divGioHang th, .divGioHang td {
+            padding: 15px;
+            border: 1px solid #EEEEEE;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .divGioHang th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .divGioHang tr:hover {
+            background-color: #e9ecef;
+        }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            color: white;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            color: white;
+        }
+
+    .btn-sm {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .form-control {
+        width: 80px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .mt-2 {
+        margin-top: 0.5rem;
+    }
+    .custum-remove a{
+        color: white;
+    }
+    .custom-title {
+        text-align: center;
+        color: #5bc0de;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+</style>

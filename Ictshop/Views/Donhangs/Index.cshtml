@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Ictshop.Models.Donhang>
+
+@{
+    ViewBag.Title = "Đơn hàng - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+
+        .custom-table th, .custom-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f2f2f2;
+        }
+
+    .title {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .status-pending {
+        color: red;
+    }
+
+    .status-confirmed {
+        color: green;
+    }
+
+    .status-unknown {
+        color: orangered;
+    }
+
+    .payment-method {
+        font-weight: bold;
+    }
+
+    .cash {
+        color: red;
+    }
+
+    .bank-transfer {
+        color: brown;
+    }
+
+    .btn-primary {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: darkblue;
+        }
+    .custom-title {
+        text-align: center;
+        color: #5bc0de;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h2 class="custom-title">Danh sách đơn hàng</h2>
+
+<table class="custom-table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Tình trạng đơn hàng
+        </th>
+        <th>
+            Thanh toán
+        </th>
+        <th>
+            Địa chỉ nhận hàng
+        </th>
+        <th>
+            Hàng động
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nguoidung.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaydat)
+            </td>
+            <td>
+                @{
+                    if (item.Tinhtrang == 0)
+                    {
+                        <h5 class="status-pending">Đang chờ xác nhận. </h5>
+                    }
+                    else if (item.Tinhtrang == 1)
+                    {
+                        <h5 class="status-confirmed">Đã xác nhận </h5>
+                    }
+                    else
+                    {
+                        <h5 class="status-unknown">Đang chờ xác nhận </h5>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    if (item.Thanhtoan == 1)
+                    {
+                        <div class="payment-method cash">Thanh toán tiền mặt</div>
+                    }
+                    else if (item.Thanhtoan == 2)
+                    {
+                        <div class="payment-method bank-transfer">Thanh toán chuyển khoản</div>
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachinhanhang)
+            </td>
+            <td>
+                <button class="btn-primary">
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.Madon }, new { @style = "color:white;" })
+                </button>
+            </td>
+        </tr>
+    }
+</table>

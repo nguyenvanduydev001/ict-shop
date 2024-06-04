@@ -1,0 +1,129 @@
+﻿@model Ictshop.Models.Donhang
+
+@{
+    ViewBag.Title = "Thanh toán - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="custom-title">Trang thanh toán</h2>
+
+@using (Html.BeginForm("DatHang", "GioHang", new { @class = "custom-form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="custom-form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Madon)
+
+        <div class="custom-form-group">
+            <div class="custom-control-label Bold"><b>Tổng tiền thanh toán</b></div>
+            <div class="custom-control-input">
+                <h3 class="text-danger"> @String.Format("{0:0,0}", @ViewBag.tongtien) VNĐ </h3>
+            </div>
+        </div>
+
+        <div class="custom-form-group">
+            <div class="custom-control-label Bold"><b>Địa chỉ nhận hàng</b></div>
+            <div class="custom-control-input">
+                @Html.EditorFor(model => model.Diachinhanhang, new { htmlAttributes = new { @class = "custom-form-control" } })
+                @Html.ValidationMessageFor(model => model.Diachinhanhang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="custom-form-group">
+            <div class="custom-control-label Bold"><b>Phương thức thanh toán</b></div>
+            <div class="custom-control-input">
+                @Html.DropDownList("MaTT", null, htmlAttributes: new { @class = "custom-form-control" })
+            </div>
+        </div>
+
+        <div class="custom-form-group">
+            <div class="custom-control-label Bold"><b>Ghi chú</b></div>
+            <div class="custom-control-input text-danger">
+                - Đối với thanh toán bằng tiền mặt. Sản phẩm giao đến quý khách, quý khách kiểm tra sản phẩm sau đó thanh toán cho nhân viên ship.
+                <br />
+                - Đối với thanh toán chuyển khoản:
+                Quý khách chuyển khoản vào tài khoản: 111111. Chủ tài khoản: XXXXXX. Ngân hàng YYYYYY
+                <br />
+                - Nội dung chuyển khoản điền theo mẫu: Họ tên, số điện thoại, Thanh toán mua hàng ICT SHOP.
+            </div>
+        </div>
+
+        <div class="custom-form-group">
+            <div class="custom-control-offset">
+                <input type="submit" value="Đặt hàng ngay" class="custom-btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    .custom-title {
+        text-align: center;
+        color: #5bc0de;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .custom-form-horizontal {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .custom-form-group {
+        margin-bottom: 20px;
+    }
+
+    .custom-control-label {
+        width: 25%;
+        float: left;
+        text-align: right;
+        margin-right: 20px;
+        font-size: 1.2em;
+        color: #333;
+    }
+
+    .custom-control-input {
+        width: 70%;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .custom-control-offset {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .custom-form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .custom-btn-primary {
+        background-color: #5bc0de;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .custom-btn-primary:hover {
+            background-color: #31b0d5;
+        }
+
+    .Bold {
+        font-weight: bold;
+            margin-top: 18px;
+    }
+
+    .text-danger {
+        color: #a94442;
+    }
+</style>

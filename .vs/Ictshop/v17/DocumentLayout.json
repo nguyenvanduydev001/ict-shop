@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|d:\\workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\user\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\user\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\sanpham\\dtxiaomipartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\sanpham\\dtxiaomipartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\danhmuc\\danhmucpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\danhmuc\\danhmucpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\sanpham\\dtiphonepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\sanpham\\dtiphonepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\sanpham\\dtsamsungpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\sanpham\\dtsamsungpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|D:\\Workspace\\asp.net\\ecomerce-sctshop\\ictshop\\views\\user\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E34AD3E6-D22D-4792-975C-31D062E773A9}|Ictshop\\Ictshop.csproj|solutionrelative:ictshop\\views\\user\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DanhmucPartial.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Danhmuc\\DanhmucPartial.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\Danhmuc\\DanhmucPartial.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Danhmuc\\DanhmucPartial.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\Danhmuc\\DanhmucPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T13:56:38.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dtxiaomipartial.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Sanpham\\dtxiaomipartial.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\Sanpham\\dtxiaomipartial.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Sanpham\\dtxiaomipartial.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\Sanpham\\dtxiaomipartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAABpAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T13:49:17.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAACMAAAAAAAAAAAAowCsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T13:21:33.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAtwH0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T11:51:05.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dtiphonePartial.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Sanpham\\dtiphonePartial.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\Sanpham\\dtiphonePartial.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Sanpham\\dtiphonePartial.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\Sanpham\\dtiphonePartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAABpAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T13:48:56.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dangnhap.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\User\\Dangnhap.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\User\\Dangnhap.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\User\\Dangnhap.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\User\\Dangnhap.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T14:23:13.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dtsamsungpartial.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Sanpham\\dtsamsungpartial.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\Sanpham\\dtsamsungpartial.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\Sanpham\\dtsamsungpartial.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\Sanpham\\dtsamsungpartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAB4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T13:28:34.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Dangky.cshtml",
+              "DocumentMoniker": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\User\\Dangky.cshtml",
+              "RelativeDocumentMoniker": "Ictshop\\Views\\User\\Dangky.cshtml",
+              "ToolTip": "D:\\Workspace\\asp.net\\ecomerce-sctshop\\Ictshop\\Views\\User\\Dangky.cshtml",
+              "RelativeToolTip": "Ictshop\\Views\\User\\Dangky.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAADsAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T14:39:37.202Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

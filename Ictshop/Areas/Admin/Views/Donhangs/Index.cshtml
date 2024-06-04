@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Ictshop.Models.Donhang>
+
+@{
+    ViewBag.Title = "Quản lý đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách đơn hàng</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Họ tên khách hàng</th>
+            <th>@Html.DisplayNameFor(model => model.Ngaydat)</th>
+            <th>Tình trạng đơn hàng</th>
+            <th>@Html.DisplayNameFor(model => model.Thanhtoan)</th>
+            <th>@Html.DisplayNameFor(model => model.Diachinhanhang)</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nguoidung.Hoten)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ngaydat)</td>
+                <td style="padding-left: 64px">
+                    @{
+                        if (item.Tinhtrang == 0)
+                        {
+                            <span class="badge badge-warning">Đang chờ xác nhận</span>
+                        }
+                        else if (item.Tinhtrang == 1)
+                        {
+                            <span class="badge badge-success">Đã xác nhận</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-danger">Đang chờ xác nhận</span>
+                        }
+                    }
+                </td>
+                <td>
+                    @{
+                        if (item.Thanhtoan == 1)
+                        {
+                            <span class="text-danger">Thanh toán tiền mặt</span>
+                        }
+                        else if (item.Thanhtoan == 2)
+                        {
+                            <span class="text-brown">Thanh toán chuyển khoản</span>
+                        }
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Diachinhanhang)</td>
+                <td>
+                    <div class="btn-group" role="group" style="padding-left: 24px">
+                        @Html.ActionLink("Chi tiết", "Details", new { id = item.Madon }, new { @class = "btn btn-info" })
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

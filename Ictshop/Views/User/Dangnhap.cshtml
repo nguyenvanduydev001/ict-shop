@@ -1,0 +1,158 @@
+﻿@model Ictshop.Models.LoginModel
+
+@{
+    ViewBag.Title = "Đăng nhập - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="login-text-danger">@ViewBag.Fail</h3>
+
+@using (Html.BeginForm("Dangnhap", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="login-form-container">
+        <div class="login-logo">
+            <h2 style="color:red; margin-bottom:10px">ICTSHOP</h2>
+        </div>
+        <div class="login-btn-social">
+            <button class="login-btn-google">Google</button>
+            <button class="login-btn-zalo">Zalo</button>
+        </div>
+        <div class="login-or">hoặc</div>
+        @Html.ValidationSummary(true, "", new { @class = "login-text-danger" })
+        <div class="login-form-group">
+            @Html.LabelFor(model => model.userMail, htmlAttributes: new { @class = "login-control-label" })
+            @Html.EditorFor(model => model.userMail, new { htmlAttributes = new { @class = "login-form-control" } })
+            @Html.ValidationMessageFor(model => model.userMail, "", new { @class = "login-text-danger" })
+        </div>
+        <div class="login-form-group">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "login-control-label" })
+            @Html.EditorFor(model => model.password, new { htmlAttributes = new { type = "password", @class = "login-form-control" } })
+            @Html.ValidationMessageFor(model => model.password, "", new { @class = "login-text-danger" })
+        </div>
+        <div class="login-form-group">
+            <input type="submit" value="Đăng nhập" class="login-btn-primary" style="width: 100%; max-width: 500px; " />
+            <a style="float:right" href="/forgot-password" class="login-forgot-password">Quên mật khẩu?</a>
+        </div>
+    </div>
+}
+<style>
+    .login-form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .login-logo img {
+        max-width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .login-btn-social {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 15px;
+    }
+
+        .login-btn-social button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+    .login-btn-google {
+        background-color: #dd4b39;
+        color: white;
+    }
+
+    .login-btn-zalo {
+        background-color: #0069d9;
+        color: white;
+    }
+
+    .login-or {
+        margin: 15px 0;
+        font-size: 14px;
+        color: #666;
+        position: relative;
+    }
+
+        .login-or:before, .login-or:after {
+            content: "";
+            display: block;
+            width: 40%;
+            height: 1px;
+            background: #ddd;
+            position: absolute;
+            top: 50%;
+        }
+
+        .login-or:before {
+            left: 0;
+        }
+
+        .login-or:after {
+            right: 0;
+        }
+
+    .login-form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .login-control-label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .login-form-control {
+        max-width:500px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .login-btn-primary {
+        background-color: #d0021b;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+        .login-btn-primary:hover {
+            background-color: #a0021b;
+        }
+
+    .login-forgot-password {
+        display: block;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .login-forgot-password:hover {
+            text-decoration: underline;
+        }
+
+    .login-text-danger {
+        color: #a94442;
+    }
+
+</style>

@@ -1,0 +1,188 @@
+﻿@model Ictshop.Models.Nguoidung
+
+@{
+    ViewBag.Title = "Đăng ký - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var useReg = Session["useReg"] as Ictshop.Models.Nguoidung;
+}
+
+
+<h3>@ViewBag.RegOk</h3>
+
+
+@using (Html.BeginForm("Dangky", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="register-form-container">
+    <div class="register-logo">
+        <h2 style="color:red; margin-bottom:10px">ICTSHOP</h2>
+    </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "register-text-danger" })
+    <div class="register-form-group">
+        @Html.LabelFor(model => model.Hoten, htmlAttributes: new { @class = "register-control-label" })
+        @Html.EditorFor(model => model.Hoten, new { htmlAttributes = new { @class = "register-form-control" } })
+        @Html.ValidationMessageFor(model => model.Hoten, "", new { @class = "register-text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "register-control-label" })
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "register-form-control" } })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "register-text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(model => model.Dienthoai, htmlAttributes: new { @class = "register-control-label" })
+        @Html.EditorFor(model => model.Dienthoai, new { htmlAttributes = new { @class = "register-form-control" } })
+        @Html.ValidationMessageFor(model => model.Dienthoai, "", new { @class = "register-text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(model => model.Matkhau, htmlAttributes: new { @class = "register-control-label" })
+        @Html.EditorFor(model => model.Matkhau, new { htmlAttributes = new { type = "password", @class = "register-form-control" } })
+        @Html.ValidationMessageFor(model => model.Matkhau, "", new { @class = "register-text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(model => model.Diachi, htmlAttributes: new { @class = "register-control-label" })
+        @Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "register-form-control" } })
+        @Html.ValidationMessageFor(model => model.Diachi, "", new { @class = "register-text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        <input type="submit" value="Đăng ký" class="register-btn-primary" style="width: 100%; max-width:500px" />
+    </div>
+    @{
+        if (ViewBag.isReg == true)
+        {
+            <div class="login-button-container">
+                <button class="register-btn-primary" style="width: 359px">
+                    <a href="/User/Dangnhap" style="color:white"> Đăng nhập</a>
+                </button>
+            </div>
+        }
+    }
+</div>
+}
+
+<style>
+    .register-form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .register-logo img {
+        max-width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .register-btn-social {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 15px;
+    }
+
+        .register-btn-social button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+    .register-btn-google {
+        background-color: #dd4b39;
+        color: white;
+    }
+
+    .register-btn-zalo {
+        background-color: #0069d9;
+        color: white;
+    }
+
+    .register-or {
+        margin: 15px 0;
+        font-size: 14px;
+        color: #666;
+        position: relative;
+    }
+
+        .register-or:before, .register-or:after {
+            content: "";
+            display: block;
+            width: 40%;
+            height: 1px;
+            background: #ddd;
+            position: absolute;
+            top: 50%;
+        }
+
+        .register-or:before {
+            left: 0;
+        }
+
+        .register-or:after {
+            right: 0;
+        }
+
+    .register-form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .register-control-label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .register-form-control {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .register-btn-primary {
+        background-color: #d0021b;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+        .register-btn-primary:hover {
+            background-color: #a0021b;
+        }
+
+    .register-text-danger {
+        color: #a94442;
+    }
+
+    .login-button-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-button a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+</style>

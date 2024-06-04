@@ -1,0 +1,121 @@
+﻿@model Ictshop.Models.Nguoidung
+
+@{
+    ViewBag.Title = "Hồ sơ cá nhân - ICTSHOP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* CSS cho trang hồ sơ cá nhân */
+    .profile-container {
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+
+    }
+
+        .profile-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+    .profile-details {
+        margin-bottom: 20px;
+    }
+
+        .profile-details img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: block; /* Để hình ảnh căn giữa */
+            margin: 0 auto; /* Để hình ảnh căn giữa */
+        }
+
+        .profile-details dl {
+            margin-bottom: 20px;
+        }
+
+        .profile-details dt {
+            font-weight: bold;
+        }
+
+        .profile-details dd {
+            margin-left: 0;
+        }
+
+    .edit-profile-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: block; /* Để nút chỉnh sửa căn giữa */
+        margin: 0 auto; /* Để nút chỉnh sửa căn giữa */
+    }
+
+        .edit-profile-button:hover {
+            background-color: #0056b3;
+        }
+
+    .dl-horizontal {
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .dt-custoom {
+        display: flex;
+    }
+        .dt-custoom dt-1{
+            margin-left: -10px;
+        }
+</style>
+
+<div class="profile-container">
+    <h2>HỒ SƠ CÁ NHÂN</h2>
+
+    <div class="profile-details">
+        <hr />
+        <img src=@Url.Content("~" + @Html.DisplayFor(model => model.Anhdaidien)) alt="Avatar" />
+        <dl class="dl-horizontal">
+            <div class="dt-custoom">
+                <dt class="dt-1">@Html.DisplayNameFor(model => model.Hoten)</dt>:
+                <dd>@Html.DisplayFor(model => model.Hoten)</dd>
+            </div>
+
+            <div class="dt-custoom">
+                <dt>@Html.DisplayNameFor(model => model.Email)</dt>:
+                <dd>@Html.DisplayFor(model => model.Email)</dd>
+            </div>
+
+            <div class="dt-custoom">
+                <dt>@Html.DisplayNameFor(model => model.Dienthoai)</dt>:
+                <dd>@Html.DisplayFor(model => model.Dienthoai)</dd>
+            </div>
+
+            <div class="dt-custoom">
+                <dt>@Html.DisplayNameFor(model => model.Matkhau)</dt >:
+                <dd>@Html.DisplayFor(model => model.Matkhau)</dd>
+            </div>
+
+            <div class="dt-custoom">
+                <dt>@Html.DisplayNameFor(model => model.Diachi)</dt>:
+                <dd>@Html.DisplayFor(model => model.Diachi)</dd>
+            </div>
+        </dl>
+    </div>
+
+    <div>
+        <button class="edit-profile-button">
+            @Html.ActionLink("Chỉnh sửa hồ sơ", "Edit", new { id = Model.MaNguoiDung }, new { @style = "color:white;" })
+        </button>
+    </div>
+</div>

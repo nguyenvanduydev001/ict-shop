@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @using Ictshop.Models
+
+    <style type="text/css">
+        body {
+            background-color: white;
+            max-height: 100vh;
+        }
+
+        .navbar-inverse {
+            background-color: #d70018;
+            border-color: #d70018;
+        }
+
+        .top_header {
+            background-color: #e9efff;
+            padding-left: 110px;
+            color: black;
+        }
+
+        .form-inline {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: x-large;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: large;
+        }
+
+            .navbar-inverse .navbar-nav > li > a:hover {
+                color: black;
+            }
+
+        .navbar-brand {
+            color: cadetblue;
+        }
+
+        .spnoibat {
+            background-color: white;
+        }
+
+            .spnoibat h3 {
+                padding-left: 30px;
+            }
+
+        .giohang {
+            color: white;
+            font-size: 17px;
+        }
+
+            .giohang a {
+                font-size: 17px;
+            }
+
+        .cps-container {
+            box-sizing: border-box;
+            display: block;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+            width: 1200px;
+        }
+
+        .swiper-container {
+            list-style: none;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            margin-left: 82px;
+        }
+
+        .swiper-wrapper {
+            box-sizing: initial;
+            display: flex;
+            height: 100%;
+            position: relative;
+            transition-property: transform;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #bannerTopHead {
+            background-color: #e9efff;
+            max-height: 27px;
+            overflow: hidden;
+            padding: 5px;
+            display: none;
+        }
+
+        .swiper-slide {
+            flex-shrink: 0;
+            height: 100%;
+            position: relative;
+            transition-property: transform;
+            width: 100%;
+        }
+
+        #bannerTopHead .swiper-container .swiper-slide {
+            max-width: 33.3333333333%;
+        }
+
+        .body-content {
+
+        }
+
+        .login {
+            display: flex;
+            margin-top: 2px;
+            margin-left: 78%;
+        }
+
+        .body {
+            max-height: 24px;
+            display: flex
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .product-category {
+            margin-top: 18px;
+            background-color: #dc3545;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 3px;
+            color: white;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: box-shadow 0.3s;
+            margin-right: 10px;
+            margin-left: 10px;
+            width: calc(25% - 20px);
+            box-sizing: border-box;
+        }
+
+            .product-item:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .product-item img {
+                max-width: 100%;
+                height: auto;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+
+        .add-to-cart-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .add-to-cart-btn:hover {
+                background-color: #0056b3;
+            }
+
+        .add-to-cart-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .add-to-cart-btn:hover {
+                background-color: #0056b3;
+            }
+
+
+        .footer-text {
+            align-items: center;
+            padding: 2px;
+            color: white;
+        }
+
+        .custom-copy {
+            background: #333;
+        }
+
+        .custom-text {
+            margin-left: 45%;
+        }
+
+        .custom-row-h2 {
+            height: 163px;
+        }
+
+        .curtom-rowid {
+            display: flex;
+            width: 1170px;
+            margin: auto;
+        }
+
+        .form-control {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .navbar-header {
+            height: 20px;
+        }
+
+        .news-video,
+        .news-content {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+            .news-video h3,
+            .news-content h3 {
+                color: #007bff;
+            }
+
+            .news-content ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+                .news-content ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .news-content ul li a {
+                        color: #343a40;
+                        text-decoration: none;
+                    }
+
+                        .news-content ul li a:hover {
+                            color: #007bff;
+                        }
+
+        .main-row {
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        .main-col-md-6,
+        .main-col-md-4 {
+            padding: 0;
+        }
+
+        .custom-footer {
+            background-color: #f8f8f8;
+            color: black;
+        }
+
+        .custom-rowid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-right: 10px;
+        }
+
+            .custom-rowid .col-md-3, .custom-rowid .col-sm-6 {
+                margin-bottom: 20px; 
+            }
+
+            .custom-rowid h2 {
+                font-size: 18px; 
+                margin-bottom: 10px; 
+                color: #000;
+                font-weight:600;
+            }
+
+            .custom-rowid span {
+                font-size: 14px; 
+                line-height: 1.6; 
+            }
+
+                .custom-rowid span:hover {
+                    color: #dc3545;
+                    cursor: pointer;
+                }
+
+    </style>
+</head>
+
+<body>
+    @{ var u = Session["use"] as Ictshop.Models.Nguoidung; }
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div id="bannerTopHead">
+            <div class="cps-container">
+                <div>
+                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-active" style="width: 393.333px; margin-right: 10px;">
+                                <a href="#">
+                                    <img src="https://cdn2.cellphones.com.vn/x/https://dashboard.cellphones.com.vn/storage/207x30_TopBanner_Homepage_01.2024_Mb_2-01133.svg" alt="Top Banner Mobile dịch vụ bảo hành" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="swiper-slide swiper-slide-next" style="width: 393.333px; margin-right: 10px;">
+                                <a href="#">
+                                    <img src="https://cdn2.cellphones.com.vn/x/https://dashboard.cellphones.com.vn/storage/207x30_TopBanner_Homepage_01.2024_Mb_2-02133.svg" alt="TOP banner mobile sản phẩm chính hãng đầy đủ VAT" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="swiper-slide" style="width: 393.333px; margin-right: 10px;">
+                                <a href="#">
+                                    <img src="https://cdn2.cellphones.com.vn/x/https://dashboard.cellphones.com.vn/storage/207x30_TopBanner_Homepage_01.2024_Mb_2-03133.svg" alt="TOP banner mobile giao nhanh miễn phí" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+                        <div class="swiper-button-next swiper-button-disabled" tabindex="-1" role="button" aria-label="Next slide" aria-disabled="true">
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_header col-md-12">
+            <div class="body">
+                @{ if (u != null)
+                    {
+                        <div class="login">
+                            <a style="color:black" href="@Url.Action("Profile", "User", new { id = u.MaNguoiDung  })"> Xin chào : @u.Email</a>
+                            &nbsp;
+                            <a style=" color: #121212; font-size: 12px; margin-top: 2px; font-weight: 600; color: black; margin-left: 7px;" href="/User/DangXuat">➜</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="login">
+                            <a style="color: black; margin-right: 2px;" href="/User/Dangky"> Đăng ký</a>
+                            |
+                            <a style="color: black; margin-left: 2px;" href="/User/Dangnhap"> Đăng nhập</a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ICTSHOP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <form class="form-inline" style="float:left; ">
+                    <input style="width: 300px" class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                </form>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav custom-navbar">
+                    <li>
+                        <a href="#" title="dienthoai" class="custom-nav-link">
+                            <span>ĐIỆN THOẠI</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="LAPTOP" class="custom-nav-link">
+                            <span>LAPTOP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/Contact" title="LIENHE" class="custom-nav-link">
+                            <span>LIÊN HỆ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "DonHangs")" class="custom-nav-link custom-orders-link">
+                            ĐƠN HÀNG
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="PHUKIEN" class="custom-nav-link">
+                            <span>PHỤ KIỆN</span>
+                        </a>
+                    </li>
+                    <li class="giohang">
+                        @Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container body-content">
+        @RenderBody()
+        <br />
+    </div>
+
+    <footer class="custom-footer" style="padding-left:205px">
+        <div class="row custom-rowid">
+            <div class="col-md-3 col-sm-6 custom-row-h2">
+                <h2>Bảo hành</h2>
+                <span>Chính sách mua hàng</span>
+                <br />
+                <span>Chính sách bảo hành</span>
+                <br />
+                <span>Trung tâm bảo hành</span>
+                <br />
+                <span>Tra cứu bảo hành</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h2>Liên kết</h2>
+                <span>Tin tức Mobile</span>
+                <br />
+                <span>Lập trình Web</span>
+                <br />
+                <span>GenkVN</span>
+                <br />
+                <span>Dân trí</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h2>Thông tin</h2>
+                <span>Về chúng tôi</span>
+                <br />
+                <span>Liên hệ</span>
+                <br />
+                <span>Góp ý</span>
+                <br />
+                <span>Tra cứu</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h2>Theo dõi</h2>
+                <span>Kênh youtube</span>
+                <br />
+                <span>Fanpage</span>
+                <br />
+                <span>Shopee</span>
+                <br />
+                <span>Group</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="custom-copy">
+        <p class="footer-text custom-text">&copy; @DateTime.Now.Year - IctShop</p>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

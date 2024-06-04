@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "ICT SHOP";
+}
+
+<br />
+<div class="main-row">
+    <div class="main-col-md-6">
+        @Html.Action("SlidePartial", "Home")
+    </div>  
+</div>
+
+<div>
+    <img class="main-image img-responsive" src="~/HinhanhSP/banner.gif" />
+</div>
+<div class="product-list" style="background: #dc3545; border-radius: 5px; position:relative; margin-top:13px">
+    <h3 class="class-h3">HOT SALE CUỐI TUẦN</h3>
+    @Html.Action("dtsamsungpartial", "Sanpham")
+</div>
+<div class="product-categories">
+    @Html.Action("DanhmucPartial", "Danhmuc")
+</div>
+<div class="product-list" style="margin-top: 10px">
+    @Html.Action("dtiphonePartial", "Sanpham")
+</div>
+<div class="product-list">
+    @Html.Action("dtsamsungpartial", "Sanpham")
+</div>
+<div class="product-list">
+    @Html.Action("dtxiaomipartial", "Sanpham")
+</div>
+<div class="product-list">
+    @Html.Action("dtsamsungpartial", "Sanpham")
+</div>
+<div class="product-list" style="margin-top: 10px">
+    @Html.Action("dtiphonePartial", "Sanpham")
+</div>
+<div class="product-list">
+    @Html.Action("dtxiaomipartial", "Sanpham")
+</div>
+<hr />
+<div class="row custom-row-index">
+    <h2> Tin tức sản phẩm</h2>
+    <div class="col-md-8 news-video">
+        <h3 style="margin-bottom:10px">Video sản phẩm mới</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/3hPoEmlBQdY" frameborder="0" allowfullscreen></iframe>
+
+
+    </div>
+    <div class="col-md-4 news-content">
+        <h3>Tin tức mới nhất</h3>
+        <ul>
+            <li><a href="#">Bí quyết chọn mua điện thoại phù hợp</a></li>
+            <li><a href="#">Top 10 điện thoại hot nhất năm</a></li>
+            <li><a href="#">Cách chăm sóc pin cho điện thoại di động</a></li>
+            <li><a href="#">Những tính năng mới trên điện thoại thông minh</a></li>
+            <li><a href="#">Làm thế nào để bảo vệ dữ liệu cá nhân trên điện thoại</a></li>
+            <li><a href="#">Các ứng dụng hữu ích cho điện thoại di động</a></li>
+            <li><a href="#">Tư vấn cách chọn mua phụ kiện điện thoại phù hợp</a></li>
+            <li><a href="#">Cách sử dụng camera điện thoại để chụp ảnh chất lượng cao</a></li>
+            <li><a href="#">Khắc phục các vấn đề thường gặp trên điện thoại</a></li>
+            <li><a href="#">Làm thế nào để tăng tuổi thọ pin cho điện thoại</a></li>
+        </ul>
+    </div>
+</div>
+<style>
+    .custom-row-index {
+        margin: 10px auto;
+    }
+    .class-h3 {
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 23px;
+        margin-left: 13px;
+        padding-top: 13px;
+    }
+</style>
+

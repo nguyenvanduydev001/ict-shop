@@ -21,8 +21,6 @@
 [Liên kết youtube](https://youtu.be/PppZUa1h4hQ?si=ZUkyH8XEKkrvgEEP) hoặc [Liên kết chatgpt](https://chatgpt.com/)
 
 ## Những chức năng có trong website 
-- Đăng nhập :
-
 - Tài khoản khách hàng:
   - tk : `Duy@gmail.com`
   - mk : `123456789`
